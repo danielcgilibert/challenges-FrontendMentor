@@ -12,9 +12,8 @@
 
 - ✅ **`Testimonials grid section`**: [Challenge URL](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7)
 
----
 
-<br>
+
 
 ## 👨‍🚀 Getting Started
 
@@ -24,9 +23,8 @@ Install dependencies:
 yarn install
 ```
 
----
 
-<br>
+
 
 ## 🛠 Build
 
@@ -37,9 +35,8 @@ cd frontendmentor
 yarn run build
 ```
 
----
 
-<br>
+
 
 ## ✍️ Develop
 
