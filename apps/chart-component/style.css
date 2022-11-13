@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+:root {
+  --primary-soft-red: hsl(10, 79%, 65%);
+  --primary-cyan: hsl(186, 34%, 60%);
+
+  --neutral-dark-brown: hsl(25, 47%, 15%);
+  --neutral-medium-brown: hsl(28, 10%, 53%);
+  --neutral-cream: hsl(27, 66%, 92%);
+  --neutral-soft-orange: hsl(33, 100%, 98%);
+
+  --body-font-size: 18px;
+
+  --font-family: 'DM Sans', sans-serif;
+  --font-weights-regular: 400;
+  --font-weights-bold: 700;
+
+  --border-r: 12px;
+  --padding-inside: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--body-font-size);
+  background-color: var(--neutral-cream);
+  width: 100%;
+  height: 100vh;
+  padding: 0px 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#balance {
+  align-items: center;
+  background-color: var(--primary-soft-red);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: var(--border-r);
+  padding: var(--padding-inside);
+  color: white;
+  font-size: var(--font-weights-bold);
+}
+
+#chart {
+  background-color: var(--neutral-soft-orange);
+  border-radius: var(--border-r);
+  padding: var(--padding-inside);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#chart .bars .bar {
+  width: 35px;
+  background-color: var(--primary-soft-red);
+  border-radius: 4px;
+}
+#chart .bars .container-bars {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+#chart .bars .container-bars span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+#chart .bars .container-bars .container-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#chart .bars .container-bars .container-bar .div-bar {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+}
+
+#chart .bars .bar:hover {
+  background-color: var(--primary-cyan);
+}
+
+#chart .bars {
+  display: flex;
+  justify-content: space-around;
+  height: 9em;
+}
+
+#chart footer {
+  border-top: 1px solid var(--neutral-cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0px 10px 0;
+}
+
+#chart footer span {
+  color: gray;
+}
+
+#chart .bars .bar:hover::before {
+  content: attr(amount);
+  position: relative;
+  top: -2.2rem;
+  font-weight: 700;
+  font-size: 0.8em;
+  padding: 0.6em 0.7em 0.6em 0.7em;
+  border-radius: 5px;
+  background-color: var(--neutral-dark-brown);
+  margin-left: -0.6rem;
+  color: white;
+}
+
+@media (min-width: 1000px) {
+  #balance {
+    width: 30%;
+  }
+
+  #chart {
+    width: 30%;
+  }
+}

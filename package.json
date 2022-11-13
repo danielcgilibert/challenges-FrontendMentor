@@ -1,5 +1,5 @@
 {
-  "name": "frontendMentor",
+  "name": "challenges-frontend-mentor",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -9,6 +9,11 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "dev:qr": "turbo run dev --filter=./apps/qr-component",
+    "dev:chart": "turbo run dev --filter=./apps/chart-component",
+    "dev:product": "turbo run dev --filter=./apps/product-preview",
+    "dev:grid": "turbo run dev --filter=./apps/testimonial-grid",
+    "dev:crowd": "turbo run dev --filter=./apps/crowdfunding-product-page",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

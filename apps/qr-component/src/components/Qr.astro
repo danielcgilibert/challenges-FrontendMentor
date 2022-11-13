@@ -1,0 +1,89 @@
+<div class="qr-card">
+  <div>
+    <img class="qr-image" src="image-qr.png" />
+    <h1>QR Generator</h1>
+    <p>Type the url to generate QR</p>
+
+    <p>Project inspiring in the challenge of Project Mentor</p>
+    <span class="qr-error"></span>
+  </div>
+
+  <form id="qr-form">
+    <input type="text" name="qr-input" placeholder="https://" />
+  </form>
+</div>
+
+<style>
+  .qr-card {
+    width: 30%;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px 25px 15px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .qr-error {
+    color: red;
+  }
+
+  .qr-card h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .qr-card p:first-of-type {
+    color: hsl(218, 44%, 22%);
+    margin-bottom: 5px;
+  }
+  .qr-card p {
+    font-size: 16px;
+    color: hsl(220, 15%, 55%);
+    margin: 0;
+  }
+
+  .qr-card img {
+    width: 80%;
+    border-radius: 8px;
+  }
+
+  .qr-card form {
+    width: 100%;
+  }
+  .qr-card input {
+    width: 90%;
+    border-radius: 8px;
+    border: 1px gainsboro solid;
+    padding: 8px 0px 8px 15px;
+    text-align: left;
+  }
+</style>
+
+<script>
+  import QRCode from 'qrcode'
+  const form = document.getElementById('qr-form')
+  const qrImg = document.querySelector('.qr-image') as HTMLImageElement | null
+  const qrError = document.querySelector('.qr-error')
+  form.addEventListener('submit', event => {
+    event.preventDefault()
+
+    try {
+      const url = new URL(event.target[0].value)
+      QRCode.toDataURL(url.href)
+        .then(url => {
+          console.log(url)
+          qrImg.src = url
+        })
+        .catch(err => {
+          qrError.innerHTML = 'error generating QR'
+          console.error(err)
+        })
+    } catch (error) {
+      qrError.innerHTML = 'not valid URL'
+      console.log(error)
+    }
+  })
+</script>
