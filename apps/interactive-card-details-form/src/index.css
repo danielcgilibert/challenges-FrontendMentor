@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+label {
+  @apply flex flex-col pb-2;
+}
+
+input {
+  @apply border-2 border-LightGrayishViolet border-opacity-20 rounded-lg p-2 pl-4 mt-1;
+}
+
+input::placeholder {
+  @apply opacity-50;
+}
