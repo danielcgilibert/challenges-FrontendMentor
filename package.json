@@ -15,6 +15,7 @@
     "dev:grid": "turbo run dev --filter=./apps/testimonial-grid",
     "dev:crowd": "turbo run dev --filter=./apps/crowdfunding-product-page",
     "dev:card": "turbo run dev --filter=./apps/interactive-card-details-form",
+    "dev:news": "turbo run dev --filter=./apps/news-homepage",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

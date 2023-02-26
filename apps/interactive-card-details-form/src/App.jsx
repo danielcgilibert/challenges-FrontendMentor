@@ -21,7 +21,7 @@ function App() {
       </div>
 
       <div className="relative  flex bg-whiteT px-5 pt-20 justify-start items-start ">
-        <div className="absolute w-3/4 h-40 py-4 rounded-lg   -top-24  bg-cover bg-[url('./assets/bg-card-front.png')] px-5">
+        <div className="absolute w-3/4 h-40 py-4 rounded-lg   -top-24 md:top-0 md:-left-24  bg-cover bg-[url('./assets/bg-card-front.png')] px-5">
           <div className="h-1/2 ">
             <img src={cardLogo} className="w-16" />
           </div>

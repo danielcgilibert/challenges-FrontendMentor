@@ -1,0 +1,111 @@
+---
+---
+
+<nav>
+  <img id="logo" src="/images/logo.svg" alt="icon" />
+
+  <button
+    aria-controls="primary-navigation"
+    class="mobile-nav-toggle"
+    aria-expanded="false"
+  >
+    <span></span>
+  </button>
+  <ul data-visible="false" class="primary-navigation">
+    <li>Home</li>
+    <li>New</li>
+    <li>Popular</li>
+    <li>Trending</li>
+    <li>Categories</li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    inset: 0 0 0 0;
+    padding: 0px 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 3em;
+  }
+  #logo {
+    width: 2em;
+    height: auto;
+  }
+  .mobile-nav-toggle {
+    width: 2em;
+    height: auto;
+    border: none;
+    background-image: url('/images/icon-menu.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    aspect-ratio: 1;
+    z-index: 9999;
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] {
+    background-image: url('/images/icon-menu-close.svg');
+  }
+
+  ul {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    gap: 1.5em;
+    padding: min(30vh, 10rem) 2em;
+    background-color: white;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: large;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in;
+  }
+
+  .primary-navigation[data-visible='true'] {
+    transform: translateX(0%);
+  }
+
+  @media (min-width: 700px) {
+    nav {
+      position: unset;
+      background-color: transparent;
+      width: 100%;
+    }
+    ul {
+      position: unset;
+      background-color: transparent;
+      transform: none;
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const primaryNav = document.querySelector('.primary-navigation')
+  const navToggle = document.querySelector('.mobile-nav-toggle')
+
+  navToggle.addEventListener('click', () => {
+    const visibility = primaryNav.getAttribute('data-visible')
+
+    if (visibility === 'false') {
+      primaryNav.setAttribute('data-visible', 'true')
+      navToggle.setAttribute('aria-expanded', 'true')
+    } else {
+      primaryNav.setAttribute('data-visible', 'false')
+      navToggle.setAttribute('aria-expanded', 'false')
+    }
+  })
+</script>

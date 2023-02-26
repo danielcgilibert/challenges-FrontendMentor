@@ -1,0 +1,78 @@
+---
+---
+
+<section>
+  <img src="/images/image-web-3-desktop.jpg" alt="asds" />
+  <div>
+    <h1>The Bright Future of Web 3.0?</h1>
+    <div>
+      <p>
+        We dive into the next evolution of the web that claims to put the power
+        of the platforms back into the hands of the people. But is it really
+        fulfilling its promise?
+      </p>
+      <button>Read more</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 2em;
+  }
+  div {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1em;
+  }
+  div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  h1 {
+    font-size: clamp(1em, 3vw, 4em);
+    line-height: 1em;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  button {
+    background-color: hsl(5, 85%, 63%);
+    border: 0;
+    width: 60%;
+    height: 50px;
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 700px) {
+    section {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 50% 50%;
+      gap: 2em;
+    }
+    div {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    div > div {
+      display: flex;
+      flex-direction: column;
+
+      gap: 1em;
+    }
+  }
+</style>

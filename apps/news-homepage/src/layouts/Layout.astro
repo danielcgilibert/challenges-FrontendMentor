@@ -1,0 +1,77 @@
+---
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0 15px;
+    background-color: #f6f6f6;
+  }
+
+  p {
+    color: #9191a5;
+    font-size: 1em;
+    line-height: 1.7em;
+  }
+  main {
+    display: grid;
+    padding-top: 3em;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  @media (min-width: 700px) {
+    body {
+      /* margin: 5% 21%; */
+      margin: auto;
+      width: 60%;
+    }
+    main {
+      display: grid;
+      display: grid;
+      grid-template-columns: 65% auto;
+      grid-template-rows: 60vh auto;
+      grid-gap: 3em;
+      padding-top: 2em;
+
+      /* grid-template-columns: 100%; */
+    }
+    main section:nth-child(3) {
+      flex-direction: row;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+</style>
